@@ -46,7 +46,7 @@ class LocalizelyApi {
         '$_baseUrl/v1/projects/$projectId/files/download?type=flutter_arb${branchParam}${exportEmptyAsParam}';
     var headers = {'X-Api-Token': apiToken};
 
-    var response = await http.get(url, headers: headers);
+    var response = await http.get(Uri.parse(url), headers: headers);
 
     if (response.statusCode != 200) {
       var formattedResponse = formatJsonMessage(response.body);
